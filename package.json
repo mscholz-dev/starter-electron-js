@@ -1,0 +1,51 @@
+{
+  "name": "starter-electron-js",
+  "version": "1.0.0",
+  "description": "Electron JS starter config setup",
+  "main": "src/electron.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "linux": "electron-packager . app --platform linux --arch x64 --out dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mscholz-dev/starter-electron-js"
+  },
+  "keywords": [
+    "starter",
+    "electron",
+    "js"
+  ],
+  "author": "mscholz.dev",
+  "licence": "MIT",
+  "homepage": "https://github.com/mscholz-dev/starter-electron-js",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "starter-electron-js"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
